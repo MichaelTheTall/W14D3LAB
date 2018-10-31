@@ -17,7 +17,7 @@ const GridView = (props)=> {
   })
 
   return(
-    <div>
+    <div className="flex-container">
     {pokeNodes}
     </div>
   )

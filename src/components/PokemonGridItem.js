@@ -7,6 +7,7 @@ const PokemonGridItem = (props) => {
     return(
       <div className="pokemon">
       <img
+      alt={props.name}
       src={imgurl}
       onClick={()=>
       {props.handleClick(props.url)}}

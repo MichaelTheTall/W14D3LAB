@@ -30,7 +30,7 @@ class PokeDex extends React.Component {
     return(
       <div>
       <SelectedView />
-      <GridView />
+      <GridView data={this.state.pokemon}/>
       </div>
     )
   }

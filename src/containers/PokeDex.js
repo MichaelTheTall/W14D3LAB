@@ -19,8 +19,9 @@ class PokeDex extends React.Component {
     request.addEventListener("load", () => {
       if (request.status !== 200) return;
       const jsonString = request.responseText;
-      const data = JSON.parse(jsonString);
-      this.setState({pokemon: data.results})
+      const datalimit = JSON.parse(jsonString);
+      const data = datalimit.results.slice(0,9);
+      this.setState({pokemon: data})
     });
 
     request.send();

@@ -3,8 +3,9 @@ import React from 'react';
 const PokemonGridItem = (props) => {
 
   console.log(props);
+   let name = props.name
     return(
-      <h1>{props.name}</h1>
+      <p>{name.charAt(0).toUpperCase() + name.substr(1)}</p>
     );
 
 }

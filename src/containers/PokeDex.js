@@ -7,7 +7,8 @@ class PokeDex extends React.Component {
   constructor(props){
     super(props);
     this.state = {
-      pokemon: []
+      pokemon: [],
+      selectedPokemonAPI: []
     }
     this.handleClick=this.handleClick.bind(this);
   }
@@ -29,8 +30,18 @@ class PokeDex extends React.Component {
   }
 
   handleClick(event){
-    this.setState({selectedPokemonAPI: event})
-    console.log(event);
+    const url = event;
+    const request = new XMLHttpRequest();
+    request.open('GET', url);
+
+    request.addEventListener("load", () => {
+      if (request.status !== 200) return;
+      const jsonString = request.responseText;
+      const data = JSON.parse(jsonString);
+      this.setState({selectedPokemonAPI: data})
+      console.log(data);
+    });
+    request.send();
   }
 
   render(){
@@ -38,7 +49,7 @@ class PokeDex extends React.Component {
       <div>
           <h1>Welcome to the PokeDex!</h1>
           <SelectedView
-          url={this.state.selectedPokemonAPI}
+          data={this.state.selectedPokemonAPI}
           />
           <GridView data={this.state.pokemon}
           handleClick={this.handleClick}

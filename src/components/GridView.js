@@ -7,6 +7,9 @@ class GridView extends React.Component {
   //TODO constructor
 
   render(){
+    return(
+      <h1></h1>
+    )
     //TODO fill this
   }
 }

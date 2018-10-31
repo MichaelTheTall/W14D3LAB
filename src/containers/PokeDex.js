@@ -46,14 +46,23 @@ class PokeDex extends React.Component {
 
   render(){
     return(
-      <div>
+      <div className='big-box'>
+        <div className='header'>
           <h1>Welcome to the PokeDex!</h1>
+        </div>
+
+        <div className='selected-view'>
           <SelectedView
           data={this.state.selectedPokemonAPI}
           />
+        </div>
+
+        <div className='grid-view'>
           <GridView data={this.state.pokemon}
           handleClick={this.handleClick}
           />
+        </div>
+
       </div>
     )
   }

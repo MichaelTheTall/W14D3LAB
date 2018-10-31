@@ -1,3 +1,19 @@
+body {
+  background-color: #8bac0f;
+    font-size: 10px;
+    font-smooth: never;
+    -webkit-font-smoothing: none;
+    font-family: 'pokemon-font', monospace;
+}
+
+h1 {
+    font-size: 40px;
+}
+
+.grid-view {
+  border-style: solid;
+}
+
 .flex-container {
   display: flex;
   flex-flow: row wrap;

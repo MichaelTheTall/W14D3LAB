@@ -8,7 +8,8 @@ class PokeDex extends React.Component {
     super(props);
     this.state = {
       pokemon: []
-    };
+    }
+    this.handleClick=this.handleClick.bind(this);
   }
 
   componentDidMount() {
@@ -27,12 +28,21 @@ class PokeDex extends React.Component {
     request.send();
   }
 
+  handleClick(event){
+    this.setState({selectedPokemonAPI: event})
+    console.log(event);
+  }
+
   render(){
     return(
       <div>
           <h1>Welcome to the PokeDex!</h1>
-          <SelectedView />
-          <GridView data={this.state.pokemon}/>
+          <SelectedView
+          url={this.state.selectedPokemonAPI}
+          />
+          <GridView data={this.state.pokemon}
+          handleClick={this.handleClick}
+          />
       </div>
     )
   }

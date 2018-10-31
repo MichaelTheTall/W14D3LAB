@@ -1,5 +1,4 @@
 import React from 'react';
-import SelectedView from './SelectedView';
 import PokemonGridItem from './PokemonGridItem';
 
 
@@ -12,6 +11,7 @@ const GridView = (props)=> {
         number={index+1}
         name={name}
         url={url}
+        handleClick={props.handleClick}
         />
       )
   })

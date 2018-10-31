@@ -8,6 +8,8 @@ const PokemonGridItem = (props) => {
       <div className="pokemon">
       <img
       src={imgurl}
+      onClick={()=>
+      {props.handleClick(props.url)}}
       />
       <p>{name.charAt(0).toUpperCase() + name.substr(1)}</p>
       </div>

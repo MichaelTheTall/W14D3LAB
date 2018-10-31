@@ -1,11 +1,15 @@
 import React from 'react';
 import GridView from '../components/GridView';
+import SelectedView from '../components/SelectedView';
 
 class PokeDex extends React.Component {
 
   render(){
     return(
-      <h1>*sad seal noises*</h1>
+      <div>
+      <SelectedView />
+      <GridView />
+      </div>
     )
   }
 

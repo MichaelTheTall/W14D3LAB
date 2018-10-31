@@ -12,7 +12,7 @@ class PokeDex extends React.Component {
   }
 
   componentDidMount() {
-    const url = 'https://pokeapi.co/api/v2/pokemon/?limit=10';
+    const url = 'https://pokeapi.co/api/v2/pokemon/?limit=151';
     const request = new XMLHttpRequest();
     request.open('GET', url);
 

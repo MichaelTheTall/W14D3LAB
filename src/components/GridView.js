@@ -1,17 +1,26 @@
 import React from 'react';
 import SelectedView from './SelectedView';
+import PokemonGridItem from './PokemonGridItem';
 
-class GridView extends React.Component {
-  //TODO AJAX request for 151 list
 
-  //TODO constructor
+const GridView = (props)=> {
 
-  render(){
+  const pokeNodes = props.data.map(({name, url}) =>{
     return(
-      <h1>HELLO I AM A GRID</h1>
-    )
-    //TODO fill this
-  }
+        <PokemonGridItem
+        name={name}
+        url={url}
+        />
+      )
+  })
+
+  return(
+    <div>
+    {pokeNodes}
+    </div>
+  )
+
 }
+
 
 export default GridView;

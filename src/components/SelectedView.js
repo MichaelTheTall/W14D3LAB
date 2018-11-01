@@ -5,7 +5,7 @@ const SelectedView = (props) => {
       let backimgurl ='https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/'+props.data.id+'.png';
       let name = props.data.name;
 
-      if (props.data.length == 0) {
+      if (props.data.length === 0) {
         return null;
       } else {
         const types = props.data.types.map((type) =>{
